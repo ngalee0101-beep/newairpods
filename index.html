@@ -84,12 +84,20 @@ footer{text-align:center;background:#222;color:white;padding:25px;font-size:10px
         <small>SPECIAL PROMOTION</small>
         <h1 id="title">5% 할인</h1>
         <p id="description">지금 구매하면<br>놓치지 마세요!</p>
-        <button onclick="document.getElementById('products').scrollIntoView()">
-            지금 쇼핑하기 →
-        </button>
+        <button onclick="document.getElementById('promo-product').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+})">
+    지금 쇼핑하기 →
+</button>
     </div>
 
-    <div class="art" id="art">🎧🎁</div>
+    <img
+    class="art"
+    id="art"
+    src="images/airpods4-pink.png"
+    alt="AirPods 4"
+>
 
 </div>
 
@@ -114,14 +122,18 @@ footer{text-align:center;background:#222;color:white;padding:25px;font-size:10px
 
 <div class="products">
 
-<div class="product">
+<div class="product" id="promo-product">
 <img src="https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=500">
 <div class="brand">APPLE</div>
 <h3>AirPods 4</h3>
 <div class="price">199,000원</div>
 <div class="rating">⭐ 4.8 (328)</div>
-<button onclick="buy('AirPods 4')">장바구니 담기</button>
-</div>
+<button onclick="document.getElementById('promo-product').scrollIntoView({
+    behavior: 'smooth',
+    block: 'center'
+})">
+    지금 쇼핑하기 →
+</button>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1603351154351-5e2d0600bb77?w=500">
