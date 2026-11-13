@@ -33,7 +33,17 @@ nav a{text-decoration:none;color:#222;font-size:11px;font-weight:bold}
 .banner p{font-size:11px;line-height:1.5}
 .banner button{border:0;border-radius:20px;padding:9px 16px;background:#df2445;color:white;font-size:10px}
 .blue button{background:#1768bd}
-.art{position:absolute;right:15px;bottom:15px;font-size:75px}
+.art {
+    position: absolute;
+    width: 34%;
+    height: 72%;
+    max-width: 170px;
+    right: 12px;
+    bottom: 10px;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
 .dots{text-align:center;margin:15px}
 .dot{width:7px;height:7px;border:0;border-radius:50%;background:#ccc}
 .dot.active{background:#e51b3e;width:18px}
@@ -205,20 +215,26 @@ let current = 0;
 function changeBanner(n) {
     current = n;
 
-    let banner = document.getElementById("banner");
+    const banner = document.getElementById("banner");
+    const art = document.getElementById("art");
 
     if (n === 0) {
         banner.className = "banner pink";
+
         document.getElementById("title").innerText = "5% 할인";
         document.getElementById("description").innerHTML =
             "지금 구매하면<br>놓치지 마세요!";
-        document.getElementById("art").innerText = "🎧🎁";
+
+        art.src = "./images/airpods4-pink.png";
+
     } else {
         banner.className = "banner blue";
+
         document.getElementById("title").innerText = "무료배송";
         document.getElementById("description").innerHTML =
             "지금 주문하고<br>배송비 부담 없이!";
-        document.getElementById("art").innerText = "🚚📦";
+
+        art.src = "./images/airpods4-blue.png";
     }
 
     document.getElementById("d0").classList.toggle("active", n === 0);
