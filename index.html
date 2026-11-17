@@ -204,7 +204,16 @@ AIRPODS & ACCESSORIES STORE
 
 <script>
 let current = 0;
+function goToAirPods4() {
+    const product = document.getElementById("promo-product");
 
+    if (product) {
+        product.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+}
 function changeBanner(n) {
     current = n;
 
